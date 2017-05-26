@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spiral</title>
+</head>
+<body>
+<input type="number" id="num" placeholder="input a positive number" onchange="myFunction(this.value)" min="1"/>
+<p id="demo1"></p>
+<script>
+    var ele = document.getElementById("demo1");
+    var arr = [];
+
+    function myFunction(val) {
+        var i;// for loop
+        var j;// for loop
+        var n;// 1,2,3, ... val^2
+        var pre = 0;// pre-indentation
+        var pos = 0;// post-indentation
+
+        // construct a structure
+        for (i = 0; i < val; i++) {
+            arr[i] = [];
+        }
+
+        n=1;
+        pre = 0;
+        pos = 0;
+        while (n <= val * val) {
+            //0
+            for (i = pre; i < val - pos && n <= val * val; i++, n++) {
+                arr[pre][i] = n;
+            }
+            //1
+            pre++;
+            for (i = pre; i < val - pos && n <= val * val; i++, n++) {
+                arr[i][val - 1 - pos] = n;
+            }
+            //2
+            for (i = val - 1 - pre; i >= pos && n <= val * val; i--, n++) {
+                arr[val - 1 - pos][i] = n;
+            }
+            //3
+            pos++;
+            for (i = val - 1 - pre; i >= pos && n <= val * val; i--, n++) {
+                arr[i][pos - 1] = n;
+            }
+        }
+
+        ele.innerHTML = "arr[]: <br>";
+        for (i = 0; i < val; i++) {
+            ele.innerHTML += arr[i] + "<br>";
+        }
+    }
+</script>
+</body>
+</html>

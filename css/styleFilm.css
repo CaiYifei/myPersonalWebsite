@@ -1,0 +1,86 @@
+/*
+** images
+*/
+.container .features {
+	padding-top: 132px;
+	padding-bottom: 190px;
+}
+
+.container .features .baraja-container {
+	width: 300px;
+	height: 500px;
+	margin: 0 auto 30px;
+	position: relative;
+	padding: 0;
+	list-style-type: none;
+}
+
+.container .features .baraja-container .single-feature {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	background: #fff;
+	pointer-events: auto;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.container .features .baraja-container .single-feature .feature-image {
+    padding-top: 40px;
+}
+
+.container .features .baraja-container .single-feature .feature-title {
+	margin-top: 18px;
+}
+
+.container .features .baraja-container .single-feature:hover {
+	-webkit-box-shadow: 0px 0px 10px rgba(110, 110, 110, 0.5);
+	-moz-box-shadow: 0px 0px 10px rgba(110, 110, 110, 0.5);
+	-o-box-shadow: 0px 0px 10px rgba(110, 110, 110, 0.5);
+	box-shadow: 0px 0px 10px rgba(110, 110, 110, 0.5);
+}
+
+/*
+** control panel
+*/
+.container .features .features-control {
+	position: relative;
+	left:50%;
+	top: 50%;
+	transform: translate(-50%, 100px);
+	margin:100px, auto;	
+}
+
+.container .features .features-control .control-icon {
+	top:0;
+	padding: 5px 15px;
+	font-size: 20px;
+	height: 50px;
+}
+
+.container .features .features-control .features-control #feature-prev {
+	left: 0px;
+}
+
+.container .features .features-control .features-control #feature-expand {
+	left: 60px;
+}
+
+.container .features .features-control .features-control #feature-close {
+	left: 120px;
+}
+
+.container .features .features-control .features-control #feature-next {
+	left: 180px;
+}
+
+

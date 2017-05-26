@@ -1,0 +1,77 @@
+/*****************/
+/* Basic Styling */
+/*****************/
+.cards_wrap
+{
+	max-width: 100%;
+	text-align:center;
+	margin: 50px auto 40px;
+	display:block;
+	position: relative;
+	padding: 10px;
+}
+
+.cards_wrap:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.cards_wrap .cards
+{
+	border-radius: 3px;
+   -moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	width: 30.6%;
+	float: left;
+	text-align:center;
+	margin-left: -5%;
+	margin-right: -5%;
+	list-style:none;
+	border: 1px solid #DDD;
+	position: relative;
+	background-color: #fff;
+	padding: 1.5%;
+	padding-bottom: 2.5%;
+	box-shadow: 0px 0px 2px #EEE, 0px 0px 10px #e5dccd inset;
+    -moz-box-shadow: 0px 0px 2px #EEE, 0px 0px 10px #e5dccd inset;
+	-webkit-box-shadow: 0px 0px 2px #EEE, 0px 0px 10px #e5dccd inset;
+	display:inline-block;
+}
+
+/*****************/
+/* Image Styling */
+/*****************/
+.cards_wrap .cards img
+{
+	width: auto/9;
+	max-width: 100%;	
+	box-shadow: 0px 6px 2px -4px #CCC;
+	-moz-box-shadow: 0px 6px 2px -4px #CCC;
+	-webkit-box-shadow: 0px 6px 2px -4px #CCC;
+}
+
+
+.cards_wrap .cards .overlap_caption
+{
+	position: absolute;
+	bottom: 10px;
+	left: 1px;
+	right: -1px;
+	font-family: 'Bad Script', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #111;
+	font-size: 24px;	
+	background-color: #EEE;
+	display:block;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=75);
+    -moz-opacity: 0.75;
+    -khtml-opacity: 0.75;
+    opacity: 0.75;
+	text-shadow: 0px 0px 2px #CCC;  
+	line-height: 165%;
+}
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>H6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+
+
+<body ng-app="myApp" ng-controller="userCtrl">
+
+<div class="w3-container">
+
+    <h3>Users</h3>
+    <span>Search</span>
+    <input type="text" ng-model="searchItem">
+
+    <table class="w3-table w3-bordered w3-striped">
+        <tr>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th ng-click="sortFun('fName')">First Name</th>
+            <th ng-click="sortFun('lName')">Last Name</th>
+            <th ng-click="sortFun('titl')">Title</th>
+            <th ng-click="sortFun('sex')">Sex</th>
+            <th ng-click="sortFun('age')">Age</th>
+        </tr>
+        <tr ng-repeat="user in users  | orderBy: myOrderBy |filter:searchItem | startFrom:(currentPage-1)*pageSize | limitTo:pageSize">
+            <td>
+                <button class="w3-btn w3-ripple" ng-click="editUser(user.id)">&#9998; Edit</button>
+            </td>
+            <td>
+                <button class="w3-btn w3-ripple" ng-click="deleteUser(user.id)">&#9998; Delete</button>
+            </td>
+            <td>{{ user.fName }}</td>
+            <td>{{ user.lName }}</td>
+            <td>{{ user.titl }}</td>
+            <td>{{ user.sex }}</td>
+            <td>{{ user.age }}</td>
+        </tr>
+    </table>
+    <br>
+    <button ng-click="toFirstPage()" ng-show="lastPage>firstPage">{{firstPage}}</button>
+    <button ng-click="prePage()" ng-show="currentPage>firstPage">PrePage</button>
+    <span>{{currentPage}}</span>
+    <button ng-click="nextPage()" ng-show="currentPage<lastPage">NextPage</button>
+    <button ng-click="toLastPage()" ng-show="lastPage>firstPage">{{lastPage}}</button>
+    <br>
+    <br>
+    <button class="w3-btn w3-green w3-ripple" ng-click="editUser('new')">&#9998; Create New User</button>
+
+    <form ng-hide="hideform">
+        <h3 ng-show="edit">Create New User:</h3>
+        <h3 ng-hide="edit">Edit User:</h3>
+        <label>First Name:</label>
+        <input class="w3-input w3-border" type="text" ng-model="fName" ng-disabled="!edit" placeholder="First Name">
+        <br>
+        <label>Last Name:</label>
+        <input class="w3-input w3-border" type="text" ng-model="lName" ng-disabled="!edit" placeholder="Last Name">
+        <br>
+        <label>Password:</label>
+        <input class="w3-input w3-border" type="password" ng-model="passw1" placeholder="Password">
+        <br>
+        <label>Repeat:</label>
+        <input class="w3-input w3-border" type="password" ng-model="passw2" placeholder="Repeat Password">
+        <br>
+        <label>Title:</label>
+        <input class="w3-input w3-border" type="text" ng-model="titl" placeholder="Title">
+        <br>
+        <label>Sex:</label>
+        <input class="w3-input w3-border" type="text" ng-model="sex" placeholder="Sex">
+        <br>
+        <label>Age:</label>
+        <input class="w3-input w3-border" type="number" ng-model="age" placeholder="Age">
+        <br>
+
+        <button class="w3-btn w3-green w3-ripple" ng-disabled="error || incomplete" ng-click="saveUser(edit, fName, lName, passw1, titl, sex, age)">&#10004; Save Changes</button>
+    </form>
+
+</div>
+
+<script src= "js/personalManagementJS.js"></script>
+
+</body>
+</html>

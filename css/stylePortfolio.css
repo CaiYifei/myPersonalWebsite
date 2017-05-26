@@ -1,0 +1,92 @@
+/* Isotope Items
+---------------------------------- */
+.sort-pictures .text-center.filters .nav-pills > li {
+	margin-right: 2px;
+	margin-left: 2px;
+	margin-bottom: 50px;
+	display: inline-block;
+	float: none;
+}
+
+.sort-pictures .text-center.filters .nav-pills > li > a {
+	border-radius: 0;
+	padding: 8px 20px;
+	border: 1px solid #cacaca;
+	color: #666666;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+.sort-pictures .text-center.filters .nav-pills > li.active > a,
+.sort-pictures .text-center.filters .nav-pills > li.active > a:hover,
+.sort-pictures .text-center.filters .nav-pills > li.active > a:focus,
+.sort-pictures .text-center.filters .nav-pills > li > a:hover {
+	background-color: #55acee;
+	border-color: #55acee;
+	color: #666666;
+}
+
+.sort-pictures .isotope-container {
+	overflow: hidden;
+}
+.sort-pictures .isotope-container .isotope-item {
+	margin-bottom: 20px;
+}
+
+@media (max-width:480px) {
+	.sort-pictures .text-center.filters .filters .nav-pills > li {
+		width: 100%;
+		display: block;
+	}
+}
+
+/* Images Overlay*/
+.isotope-container .isotope-item .overlay-container {
+	position: relative;
+	display: block;
+	overflow: hidden;
+}
+
+.isotope-container .isotope-item .overlay-container:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	cursor: pointer;
+}
+
+/*
+** modal
+*/
+.isotope-container .isotope-item .modal .modal-dialog .modal-content {
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+
+/* Large devices (Large desktops 1200px and up) */
+@media (min-width:1200px) {
+	.isotope-container .isotope-item .modal .modal-dialog {
+		width: 1140px;
+	}
+}
+
+.isotope-container .isotope-item .modal .modal-dialog .modal-content .modal-header .close{
+	float:right;
+}
+
+.isotope-container .isotope-item .modal .modal-dialog .modal-content .modal-header .close:after{
+	content: "";
+    clear: both;
+    display: table;
+}
+
+.isotope-container .isotope-item .image-box .btn{
+	width:auto;
+	color:black;
+	background-color:white;
+}
+
+.isotope-container .isotope-item .image-box .btn:hover,
+.isotope-container .isotope-item .image-box .btn:active{
+	color:black;
+	background-color:#99cc00;
+}
